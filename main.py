@@ -16,7 +16,7 @@ import jinja2
 import webapp2
 
 JINJA_ENVIRONMENT = jinja2.Environment(
-	loader = jinja2.FileSystemLoader(os.path.dirname.(__file__) + "/templates"))
+	loader = jinja2.FileSystemLoader(os.path.dirname(__file__) + "/templates"))
 
 class MainPage(webapp2.RequestHandler):
     def get(self):
