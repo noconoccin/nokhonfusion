@@ -18,3 +18,12 @@ from google.appengine.ext import vendor
 # Add any libraries installed in the "lib" folder.
 vendor.add('lib')
 # [END vendor]
+
+import logging
+
+class StubsFilter(logging.Filter):
+
+    def filter(self, record):
+        return 'stubs.py' != record.filename
+
+logging.root.addFilter(StubsFilter())
