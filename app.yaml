@@ -6,6 +6,15 @@ handlers:
 - url: /.*
   script: main.app
 
+- url: /static/css
+  static_dir: css
+  
+- url: /static/js
+  static_dir: js
+  
+- url: /static/images
+  static_dir: images
+
 libraries:
 - name: webapp2
   version: "2.5.2"
