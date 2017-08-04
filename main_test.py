@@ -23,7 +23,7 @@ def app():
 
 
 def test_form(app):
-    r = app.get('/form')
+    r = app.get('/index')
     assert r.status_code == 200
     assert 'Submit a form' in r.data.decode('utf-8')
 

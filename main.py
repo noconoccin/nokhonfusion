@@ -25,9 +25,9 @@ app = Flask(__name__)
 
 
 # [START form]
-@app.route('/form')
+@app.route('/index')
 def form():
-    return render_template('form.html')
+    return render_template('index.html')
 # [END form]
 
 
