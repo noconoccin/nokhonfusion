@@ -11,19 +11,8 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-import os
-import jinja2
-import webapp2
 
-JINJA_ENVIRONMENT = jinja2.Environment(
-	loader = jinja2.FileSystemLoader(os.path.dirname.(__file__) + "/templates"))
+from google.appengine.ext import vendor
 
-class MainPage(webapp2.RequestHandler):
-    def get(self):
-		template = JINJA_ENVIRONMENT.get_template('index.html')
-		self.response.out.write(template_render())
-
-
-app = webapp2.WSGIApplication([
-    ('/', MainPage),
-], debug=True)
+# Add any libraries installed in the "lib" folder.
+vendor.add('lib')
