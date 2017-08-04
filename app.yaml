@@ -6,14 +6,9 @@ handlers:
 - url: /.*
   script: main.app
 
-- url: /css
-  static_dir: /static/css
-  
-- url: /js
-  static_dir: /static/js
-  
-- url: /images
-  static_dir: /static/images
+- url: /main\.css
+  static_files: main.css
+  upload: main\.css
 
 libraries:
 - name: webapp2
