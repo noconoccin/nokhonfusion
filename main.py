@@ -14,16 +14,13 @@
 import os
 import jinja2
 import webapp2
-import cgi
-from gaesessions import get_current_session
 
 JINJA_ENVIRONMENT = jinja2.Environment(
 	loader = jinja2.FileSystemLoader(os.path.dirname(__file__) + "/templates"))
 
 class MainPage(webapp2.RequestHandler):
     def get(self):
-        session = get_current_session()
-        fctext = cgi.escape(session.get('fctext', ''), quote=True)
+        fctext = self.request.get('fctext')
         translation = fctext
         template_vars = {
           'translation': translation
