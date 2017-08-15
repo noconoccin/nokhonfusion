@@ -3,6 +3,9 @@ api_version: 1
 threadsafe: true
 
 handlers:
+- url: /data
+  static_dir: data
+
 - url: /static
   static_dir: static
 

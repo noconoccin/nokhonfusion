@@ -15,6 +15,7 @@ import os
 import jinja2
 import webapp2
 import logging
+import decode
 
 JINJA_ENVIRONMENT = jinja2.Environment(
 	loader = jinja2.FileSystemLoader(os.path.dirname(__file__) + "/templates"))
@@ -33,7 +34,8 @@ class Translate(webapp2.RequestHandler):
     def post(self):
         fctext = self.request.get('fctext')
         logging.info(fctext)
-        translation = fctext
+        translation = decode.decode(fctext) # translation = fctext
+		logging.info(translation)
         template_vars = {
           'inputtext': fctext, 'translation': translation
         }
