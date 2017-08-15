@@ -21,6 +21,7 @@ JINJA_ENVIRONMENT = jinja2.Environment(
 class MainPage(webapp2.RequestHandler):
     def get(self):
         fctext = self.request.get('fctext')
+        print(fctext)
         translation = "[Test] This is the translation."
         template_vars = {
           'translation': translation
