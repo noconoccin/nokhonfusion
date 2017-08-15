@@ -21,11 +21,10 @@ JINJA_ENVIRONMENT = jinja2.Environment(
 
 class MainPage(webapp2.RequestHandler):
     def get(self):
-        fctext = self.request.get('fctext')
-        logging.info(fctext)
         translation = ""
+		inputtext = ""
         template_vars = {
-          'translation': translation
+          'inputtext': inputtext, 'translation': translation
         }
         template = JINJA_ENVIRONMENT.get_template('index.html')
         self.response.out.write(template.render(template_vars))
@@ -36,7 +35,7 @@ class Translate(webapp2.RequestHandler):
         logging.info(fctext)
         translation = fctext
         template_vars = {
-          'translation': translation
+          'inputtext': fctext, 'translation': translation
         }
         template = JINJA_ENVIRONMENT.get_template('index.html')
         self.response.out.write(template.render(template_vars))
