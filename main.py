@@ -20,10 +20,10 @@ JINJA_ENVIRONMENT = jinja2.Environment(
 
 class MainPage(webapp2.RequestHandler):
     def get(self):
-	    translation = "[Test] This is the translation."
-	    template_vars = {
-	      'translation': translation
-	    }
+        translation = "[Test] This is the translation."
+        template_vars = {
+          'translation': translation
+        }
         template = JINJA_ENVIRONMENT.get_template('index.html')
         self.response.out.write(template.render(template_vars))
 
