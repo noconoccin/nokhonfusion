@@ -19,3 +19,7 @@ libraries:
   version: latest
 - name: numpy
   version: "1.6.1"
+- name: six
+  version: "1.10.0"
+- name: tensorflow
+  version: "1.0.1"
