@@ -35,7 +35,7 @@ class Translate(webapp2.RequestHandler):
         fctext = self.request.get('fctext')
         logging.info(fctext)
         translation = decode.decode(fctext) # translation = fctext
-		logging.info(translation)
+        logging.info(translation)
         template_vars = {
           'inputtext': fctext, 'translation': translation
         }
