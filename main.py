@@ -28,7 +28,7 @@ class MainPage(webapp2.RequestHandler):
         template = JINJA_ENVIRONMENT.get_template('index.html')
         self.response.out.write(template.render(template_vars))
 		
-class MainPage(webapp2.RequestHandler):
+class Translate(webapp2.RequestHandler):
     def post(self):
         fctext = self.request.get('fctext')
         translation = "[Test] This is the translation 2."
