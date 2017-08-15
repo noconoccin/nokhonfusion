@@ -19,7 +19,7 @@ JINJA_ENVIRONMENT = jinja2.Environment(
 	loader = jinja2.FileSystemLoader(os.path.dirname(__file__) + "/templates"))
 
 class MainPage(webapp2.RequestHandler):
-    def post(self):
+    def get(self):
         fctext = self.request.get('fctext')
         translation = fctext
         template_vars = {
