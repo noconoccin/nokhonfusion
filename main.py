@@ -19,15 +19,6 @@ JINJA_ENVIRONMENT = jinja2.Environment(
 	loader = jinja2.FileSystemLoader(os.path.dirname(__file__) + "/templates"))
 
 class MainPage(webapp2.RequestHandler):
-    def get(self):
-        translation = "[Test] This is the translation."
-        template_vars = {
-          'translation': translation
-        }
-        template = JINJA_ENVIRONMENT.get_template('index.html')
-        self.response.out.write(template.render(template_vars))
-
-class Translate(webapp2.RequestHandler):		
     def post(self):
         fctext = self.request.get('fctext')
         translation = fctext
@@ -40,5 +31,4 @@ class Translate(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([
     ('/', MainPage),
-	('/', Translate)
 ], debug=True)
