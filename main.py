@@ -14,6 +14,7 @@
 import os
 import jinja2
 import webapp2
+import logging
 
 JINJA_ENVIRONMENT = jinja2.Environment(
 	loader = jinja2.FileSystemLoader(os.path.dirname(__file__) + "/templates"))
