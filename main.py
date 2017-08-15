@@ -23,7 +23,7 @@ class MainPage(webapp2.RequestHandler):
     def get(self):
         fctext = self.request.get('fctext')
         logging.info(fctext)
-        translation = "[Test] This is the translation."
+        translation = ""
         template_vars = {
           'translation': translation
         }
