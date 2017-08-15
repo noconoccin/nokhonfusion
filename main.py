@@ -35,7 +35,7 @@ class Translate(webapp2.RequestHandler):
         template_vars = {
           'translation': translation
         }
-        template = JINJA_ENVIRONMENT.get_template('index.html/#translate')
+        template = JINJA_ENVIRONMENT.get_template('index.html')
         self.response.out.write(template.render(template_vars))
 
 
